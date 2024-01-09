@@ -1,0 +1,97 @@
+<div class="containerx">
+ 
+  <nav class="navbar navbar-expand-lg ">
+   <div class="container">
+         <a class="navbar-brand" href="/">
+         <h1 style=" color: aliceblue; "> Tour Guide</h1>
+         </a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="text-white lnr lnr-menu"></span>
+         </button>
+  
+         <!-- <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
+           <ul class="navbar-nav">
+              
+               <li> <a class="nav-link js-scroll-trigger" href="/user/dashboard">Back</a></li>
+              
+           </ul>
+         </div>             -->
+   </div>
+ </nav>
+<!-- <section class="registration-section" style="background-color: #eee;"> -->
+  <div class="container">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-lg-12 col-xl-11">
+        <div class="card text-black mt-3 mb-3" style="border-radius: 25px;">
+          <div class="card-body p-md-5">
+            <div class="row justify-content-center">
+              <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">User Sign Up</p>
+                <form (ngSubmit)="onSubmit()" class="mx-1 mx-md-4" #signupForm="ngForm" novalidate>
+                  <div class="mb-4">
+
+                    <div class="form-floating">
+                      <input [(ngModel)]="signUpData.name" type="text" id="formName"
+                      class="form-control" name="name" required placeholder="Your Name"
+                      autocomplete="username">
+                      <label class="form-label" for="formName">Your Name</label>
+                      <div *ngIf="signupForm.controls['name'].errors?.['required'] && 
+                      signupForm.controls['name'].touched" class="text-danger">
+                        Name is required.
+                      </div>
+                    </div>
+                  </div>
+                 
+                 
+                  <div class="form-floating mb-3">
+                    <input [(ngModel)]="signUpData.email" type="email" class="form-control"
+                    id="floatingInput" placeholder="name@example.com" name="email" required 
+                    email #email="ngModel" autocomplete="email">
+                    <label for="floatingInput">Email address</label>
+                    <div *ngIf="email.touched && email.invalid" class="text-danger">
+                      <div *ngIf="email.errors?.['required']">Email is required</div>
+                      <div *ngIf="email.errors?.['email']">Invalid email format</div>
+                    </div>
+                  </div>
+                  <div class="form-floating mb-3">
+                  <input [(ngModel)]="signUpData.password" type="password" 
+                  class="form-control" id="floatingPassword"
+                    placeholder="Password" name="password" 
+                    required minlength="8" #password="ngModel" autocomplete="new-password">
+                  <label for="floatingPassword">Password</label>
+                  <div *ngIf="password.touched && password.invalid" class="text-danger">
+                    <div *ngIf="password.errors?.['required']">Password is required</div>
+                    <div *ngIf="password.errors?.['minlength']">Password should be at least 8 characters</div>
+                  </div>
+                </div>
+
+                <div class="form-floating mb-3">
+                  <input [(ngModel)]="signUpData.repeatPassword" type="password"
+                  class="form-control" id="floatingPassword" name="repeatPassword" required 
+                  #repeatPassword="ngModel" placeholder="Password" autocomplete="new-password">
+                  <label for="floatingPassword">Repeat your password</label>
+                  <div *ngIf="repeatPassword.touched && repeatPassword.invalid" class="text-danger">
+                    <div *ngIf="repeatPassword.errors?.['required']">Repeat Password is required</div>
+                    <div *ngIf="signUpData.password !== signUpData.repeatPassword">Passwords do not match</div>
+                  </div>
+                </div>
+
+                 
+                  <div class="d-grid">
+                    <button type="submit" class="btn btn-primary btn-lg" 
+                    [disabled]="signupForm.invalid">Register</button>
+                  </div>
+                </form>
+              </div>
+              <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+                  class="img-fluid" alt="Sample image">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- </section> -->
+</div>

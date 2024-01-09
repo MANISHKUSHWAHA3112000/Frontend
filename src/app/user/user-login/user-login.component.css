@@ -1,0 +1,22 @@
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 4px;
+  }
+
+  .spinner-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 4px;
+  }
+
+  .containerx{
+    background-image: url('../../../assets/images/header-bg.jpg');
+  }

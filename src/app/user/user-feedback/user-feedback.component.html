@@ -1,0 +1,52 @@
+
+<div class="main2">
+  
+  <nav class="navbar navbar-expand-lg ">
+   <div class="container">
+         <a class="navbar-brand" href="/">
+         <h1 style=" color: aliceblue; "> Tour Guide</h1>
+         </a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="text-white lnr lnr-menu"></span>
+         </button>
+  
+         <!-- <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
+           <ul class="navbar-nav">
+              
+               <li> <a class="nav-link js-scroll-trigger" href="/user/dashboard">Back</a></li>
+              
+           </ul>
+         </div>             -->
+   </div>
+ </nav>
+
+<div class='fb-form'>
+  
+    <form action='#' class='form-group'>
+      <h2>Tell us what you think</h2>
+      <!-- <input class='form-control' placeholder='Email' type='text'> -->
+     
+
+      <div class="mb-2 form-floating">
+        <select class="form-select" id="dropdown" 
+        name="dropdown"  [(ngModel)]="selectedPlace" required>
+          
+        <option *ngFor="let item of placeList" [value]="item.name">{{item.name}}</option>
+        </select>
+        <label for="dropdown">Select Place</label>
+      </div>
+      <textarea class='form-control' id='fb-comment' name='comment'
+      placeholder='Tell us what you think' [(ngModel)]="FeedbackData.comment"></textarea>
+
+        <div class="form-floating">
+          <input [(ngModel)]="FeedbackData.rating"  class='form-control' 
+            type="number"  name="rating"  required/>
+          <label for="rating">Enter Rating</label>
+      </div>
+      <button class='form-control btn btn-primary' type='submit' (click)="OnSubmit()">
+        Submit
+      </button>
+    </form>
+  </div> 
+
+</div>

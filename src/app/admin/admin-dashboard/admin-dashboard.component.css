@@ -1,0 +1,17 @@
+
+
+.nav-pills li a.active{
+    background-color: blue;
+}
+
+.nav-pills li a{
+    transition: transform 0.2s;
+}
+.nav-pills li a:hover{
+    transform: scale(1.05);
+}
+
+.temp{
+    width: 100%;
+    background-color: red;
+}

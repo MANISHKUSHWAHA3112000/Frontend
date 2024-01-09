@@ -1,0 +1,20 @@
+.container{
+    width: 100%; 
+}
+
+.place-list-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap:2rem;
+    justify-content: center;
+    
+}
+
+
+.overflow-hiddenn {
+    height:auto;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
